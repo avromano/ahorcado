@@ -3,8 +3,10 @@
 </head>
 <body>
 <h1>Ahorcado</h1>
-<label>Adivine la palabra:</label>
+<br>
+<h2>Palabra = <%= @@palabra_a_adivinar %></h2>
 <form action="adivinar" method="POST">
+<label>Adivine la palabra:</label><br>
 <input type="text" name="palabra"/>
 <br>
 <label>Adivine la letra:</label>

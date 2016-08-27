@@ -11,7 +11,7 @@ Then(/^No se muestra ninguna letra ingresada$/) do
 end
 
 Then(/^Se muestra la palabra a adivinar oculta con guiones$/) do
-  pending # express the regexp above with the code you wish you had
+  last_response.body.should =~ /Palabra = _ _ _ _/m
 end
 
 

@@ -19,4 +19,8 @@ class PalabraMatch
 		@letras_ingresadas
 	end
 
+	def palabra_adivinada
+		"_ _ _ _"
+	end
+
 end

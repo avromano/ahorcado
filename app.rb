@@ -15,6 +15,8 @@ get '/' do
 
   @@lista_letras = []
 
+  @@palabra_a_adivinar = @@palabra_match.palabra_adivinada
+
   erb :index
 end
 

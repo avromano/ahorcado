@@ -32,4 +32,12 @@ describe "juego de ahorcado" do
 		lista_letras = palabra_match.letras_ingresadas
 		expect(lista_letras).to be == ["h"]
 	end
+
+	it "se muestra la palabra a adivinar con guiones" do
+		dicc = Diccionario.new
+		palabra_elegida = dicc.elegirPalabra
+		palabra_match = PalabraMatch.new(palabra_elegida)
+		palabra_adivinada = palabra_match.palabra_adivinada
+		expect(palabra_adivinada).to be == "_ _ _ _"
+	end
 end

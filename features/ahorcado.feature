@@ -4,6 +4,7 @@ Scenario: Se inicia el juego
     Given El Juego se inicia
     Then  Se establece el contador en 6
     Then  No se muestra ninguna letra ingresada
+    Then  Se muestra la palabra a adivinar oculta con guiones
 
 Scenario: El usuario ingresa la palabra correcta
     Given Se ingresa la palabra correcta
