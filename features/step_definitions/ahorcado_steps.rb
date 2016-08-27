@@ -3,11 +3,15 @@ Given(/^Se ingresa la palabra correcta$/) do
 end
 
 Then(/^Se muestra mensaje de palabra correcta$/) do
-  	last_response.body.should =~ /Palabra correcta!/m
+  	last_response.body.should =~ /Ganaste!/m
 end
 
 Then(/^No se muestra ninguna letra ingresada$/) do
   last_response.body.should =~ /Letras ingresadas = \[\]/m
+end
+
+Then(/^Se muestra la palabra a adivinar oculta con guiones$/) do
+  pending # express the regexp above with the code you wish you had
 end
 
 
