@@ -41,6 +41,7 @@ post '/adivinar' do
     end
     @@resultado_palabra = ""
     @@lista_letras.push(letra)
+    @@palabra_a_adivinar = @@palabra_match.palabra_adivinada
   end
 
   puts @@contador

@@ -1,8 +1,8 @@
 class PalabraMatch
-	@palabra_a_adivinar = ""
+	@palabra_a_adivinar = []
 	def initialize(palabra)
 		@@contador = 6
-		@palabra_a_adivinar = palabra
+		@palabra_a_adivinar = palabra.split("")
 		@letras_ingresadas = []
 	end
 
@@ -20,7 +20,17 @@ class PalabraMatch
 	end
 
 	def palabra_adivinada
-		"_ _ _ _"
+		pos = 0
+		palabra_adivinada = ""
+		@palabra_a_adivinar.each do |letra|
+			if @letras_ingresadas.include?(letra)
+				palabra_adivinada = palabra_adivinada + letra + " "
+			else
+				palabra_adivinada = palabra_adivinada + "_ "
+			end
+			pos = pos + 1
+		end
+		return palabra_adivinada
 	end
 
 end

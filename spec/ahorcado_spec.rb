@@ -38,6 +38,15 @@ describe "juego de ahorcado" do
 		palabra_elegida = dicc.elegirPalabra
 		palabra_match = PalabraMatch.new(palabra_elegida)
 		palabra_adivinada = palabra_match.palabra_adivinada
-		expect(palabra_adivinada).to be == "_ _ _ _"
+		expect(palabra_adivinada).to be == "_ _ _ _ "
+	end
+	
+	it "se ingresa una letra correcta y se muestra en la palabra a adivinar" do
+		dicc = Diccionario.new
+		palabra_elegida = dicc.elegirPalabra
+		palabra_match = PalabraMatch.new(palabra_elegida)
+		palabra_match.valida_letra("h")
+		palabra_adivinada = palabra_match.palabra_adivinada
+		expect(palabra_adivinada).to be == "h _ _ _ "
 	end
 end
