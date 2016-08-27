@@ -15,12 +15,24 @@ Then(/^Se muestra un mensaje de letra correcta$/) do
 end
 
 Given(/^El usuario ingresa una letra erronea$/) do
-	pending
   	visit '/adivinar', :post, "letra=p"
 end
 
 Then(/^Se muestra un mensaje de letra incorrecta$/) do
-	pending
 	last_response.body.should =~ /Letra incorrecta!/m
+end
+
+Given(/^El Juego se inicia$/) do
+  visit '/'
+end
+
+Then(/^Se establece el contador en (\d+)$/) do |arg1|
+  last_response.body.should =~ /Chances = 6/m
+end
+
+
+Then(/^Se descuenta una chance$/) do
+	pending
+  	last_response.body.should =~ /Chances = 5/m
 end
 

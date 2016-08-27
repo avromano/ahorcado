@@ -1,4 +1,5 @@
 require "./lib/diccionario"
+require "./lib/palabra_match"
 
 describe "juego de ahorcado" do
 	it "se elige una palabra 'hola'" do
@@ -6,4 +7,14 @@ describe "juego de ahorcado" do
 		palabra_elegida = dicc.elegirPalabra
 		expect(palabra_elegida).to be == "hola"
 	end
+
+	it "se elige una letra 'h'" do
+		dicc = Diccionario.new
+		palabra_elegida = dicc.elegirPalabra
+		palabra_match = PalabraMatch.new(palabra_elegida)
+		resultado = palabra_match.valida_letra("h")
+		expect(resultado).to be == true
+	end
+
+	
 end
