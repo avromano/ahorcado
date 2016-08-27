@@ -1,18 +1,27 @@
 require 'sinatra'
+require './lib/diccionario'
 
-@@resultado = ""
+@@resultado_letra = ""
+@@resultado_palabra = ""
 
 get '/' do
     erb :index
 end
 
 post '/adivinar' do
-  dicc = ["hola"]
+  dic = Diccionario.new
+  palabra_elegida = dic.elegirPalabra
   palabra = params["palabra"]
-  if palabra == dicc[0]
-    @@resultado = "Palabra correcta!"
+  letra = params["letra"].to_s
+  if palabra_elegida.include?(letra)
+    @@resultado_letra = "Letra correcta!"
   else 
-    @@resultado = "Palabra incorrecta!"
+    @@resultado_letra = "Letra incorrecta!"
+  end
+  if palabra == palabra_elegida
+    @@resultado_palabra = "Palabra correcta!"
+  else 
+    @@resultado_palabra = "Palabra incorrecta!"
   end
   erb :index
 end

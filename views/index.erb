@@ -6,8 +6,14 @@
 <label>Adivine la palabra:</label>
 <form action="adivinar" method="POST">
 <input type="text" name="palabra"/>
+<br>
+<label>Adivine la letra:</label>
+<br>
+<input type="text" name="letra"/>
 <input type="submit" value="adivinar"/>
 </form>
-<label><%= @@resultado %></label>
+<label><%= @@resultado_palabra %></label>
+<br>
+<label><%= @@resultado_letra %></label>
 </body>
 </html>
