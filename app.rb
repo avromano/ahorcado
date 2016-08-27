@@ -44,8 +44,12 @@ post '/adivinar' do
   puts @@contador
   if @@contador.to_i == 0
      erb :lose
-  else  
-    erb :index
+  else
+     if @@resultado_palabra == "Palabra correcta!"
+         erb :win
+     else
+        erb :index
+      end
   end
 
 end
