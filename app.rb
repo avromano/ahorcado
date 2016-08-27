@@ -38,8 +38,14 @@ post '/adivinar' do
       @@contador = @@contador - 1
     end
     @@resultado_palabra = ""
-    @@lista_letras.push(letra) 
+    @@lista_letras.push(letra)
   end
 
-  erb :index
+  puts @@contador
+  if @@contador.to_i == 0
+     erb :lose
+  else  
+    erb :index
+  end
+
 end
