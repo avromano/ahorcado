@@ -6,6 +6,11 @@ Then(/^Se muestra mensaje de palabra correcta$/) do
   	last_response.body.should =~ /Palabra correcta!/m
 end
 
+Then(/^No se muestra ninguna letra ingresada$/) do
+  last_response.body.should =~ /Letras ingresadas = \[\]/m
+end
+
+
 Given(/^El usuario ingresa una letra acertada$/) do
   	visit '/adivinar', :post, "letra=h"
 end
@@ -33,4 +38,14 @@ end
 Then(/^Se descuenta una chance$/) do
   last_response.body.should =~ /Chances = 5/m
 end
+
+When(/^El usuario ingresa una letra$/) do
+  visit '/adivinar', :post, "letra=p"
+end
+
+Then(/^La letra se muestra$/) do
+  last_response.body.should =~ /Letras ingresadas = \["p"\]/m
+end
+
+
 

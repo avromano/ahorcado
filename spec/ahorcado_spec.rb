@@ -23,4 +23,13 @@ describe "juego de ahorcado" do
 		contador = palabra_match.contador
 		expect(contador).to be == 6
 	end
+
+	it "se registra una nueva letra" do
+		dicc = Diccionario.new
+		palabra_elegida = dicc.elegirPalabra
+		palabra_match = PalabraMatch.new(palabra_elegida)
+		resultado = palabra_match.valida_letra("h")
+		lista_letras = palabra_match.letras_ingresadas
+		expect(lista_letras).to be == ["h"]
+	end
 end

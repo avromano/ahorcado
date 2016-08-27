@@ -12,6 +12,9 @@ get '/' do
 	@@palabra_match = PalabraMatch.new(@@palabra_elegida)
 
   @@contador = @@palabra_match.contador
+
+  @@lista_letras = []
+
   erb :index
 end
 
@@ -32,9 +35,10 @@ post '/adivinar' do
       @@resultado_letra = "Letra correcta!"
     else
       @@resultado_letra = "Letra incorrecta!"
-      @@contador = @@contador - 1 
+      @@contador = @@contador - 1
     end
     @@resultado_palabra = ""
+    @@lista_letras.push(letra) 
   end
 
   erb :index
