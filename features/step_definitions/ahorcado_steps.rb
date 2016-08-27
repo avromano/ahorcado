@@ -30,9 +30,7 @@ Then(/^Se establece el contador en (\d+)$/) do |arg1|
   last_response.body.should =~ /Chances = 6/m
 end
 
-
 Then(/^Se descuenta una chance$/) do
-	pending
-  	last_response.body.should =~ /Chances = 5/m
+  last_response.body.should =~ /Chances = 5/m
 end
 
